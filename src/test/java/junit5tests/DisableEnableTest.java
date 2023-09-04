@@ -1,11 +1,14 @@
 package junit5tests;
 
+import listeners.Listener;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 
+@ExtendWith(Listener.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DisableEnableTest {
 
