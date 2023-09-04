@@ -48,4 +48,18 @@ public class ParameterisedTests {
   void csvSourceChangeDelimiter(String param1, String param2){
     System.out.println("param1 = " + param1 + ", param2 = " + param2);
   }
+
+  @DisplayName("Can use data from multiple CSV files.")
+  @ParameterizedTest
+  @CsvFileSource(files = {"src/test/resources/params/shoppinglist.csv", "src/test/resources/params/shoppinglist2.csv"},numLinesToSkip = 1)
+  void csvFileSourceMultipleCSVFilesTest(String name, double price, int qty, String unitOfMeasure, String provider){
+    System.out.println("name = " + name + ", price = " + price + ", qty = " + qty + ", unit = " + unitOfMeasure + ", provider = " + provider);
+  }
+
+  @DisplayName("Can use different delimiters in CSV files.")
+  @ParameterizedTest
+  @CsvFileSource(files = "src/test/resources/params/shoppinglist3.csv", numLinesToSkip = 1, delimiterString = "]")
+  void csvFileSourceDelimeterTest(String name, double price, int qty, String unitOfMeasure, String provider){
+    System.out.println("name = " + name + ", price = " + price + ", qty = " + qty + ", unit = " + unitOfMeasure + ", provider = " + provider);
+  }
 }

@@ -1,0 +1,4 @@
+name,price,quantity,unit of measure,provider
+tomato,0.10,2,kg,market
+carrot,1.5,1,kg,store
+potato,5,1,kg,corner shop
